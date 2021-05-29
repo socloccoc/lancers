@@ -10,6 +10,10 @@ return [
         'lancers' => [
             'email' => env('LANCERS_EMAIL'),
             'pass' => env('LANCERS_PASSWORD'),
+        ],
+        'sokudan' => [
+            'email' => env('SOKUDAN_EMAIL'),
+            'pass' => env('SOKUDAN_PASSWORD'),
         ]
     ]
 ];

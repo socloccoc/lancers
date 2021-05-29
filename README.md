@@ -23,6 +23,10 @@
 - cd app/crawl
 - php artisan lancers:crawl
 
+### Crawl data from sokudan page
+- cd app/crawl
+- php artisan sokudan:crawl
+
 ### Adminer
 
 - http://crawl.local:8081
