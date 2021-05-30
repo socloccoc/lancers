@@ -14,6 +14,16 @@ return [
         'sokudan' => [
             'email' => env('SOKUDAN_EMAIL'),
             'pass' => env('SOKUDAN_PASSWORD'),
+        ],
+        'crowdworks' => [
+            'email' => env('CROWDWORKS_EMAIL'),
+            'pass' => env('CROWDWORKS_PASSWORD'),
+            'job_category' => [
+                'https://crowdworks.jp/public/jobs/group/development',
+                'https://crowdworks.jp/public/jobs/group/software_development',
+                'https://crowdworks.jp/public/jobs/group/web_products',
+                'https://crowdworks.jp/public/jobs/group/ec',
+            ]
         ]
     ]
 ];

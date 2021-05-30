@@ -11,6 +11,19 @@ class HomeController extends Controller
 
     public function index() {
         $client = new Client();
+        $crawler = $client->request('GET', 'https://crowdworks.jp/login');
+        $form = $crawler->selectButton('ログインする')->form();
+        $crawler = $client->submit($form, array('username' => 'daihusk57@gmail.com', 'password' => 'Dai@1234'));
+
+        $crawler = $client->request('GET', 'https://crowdworks.jp/public/employers/165402');
+        $crawler->filter('.flash-error')->each(function ($node) {
+            print $node->text()."\n";
+        });
+        echo $crawler->html();
+    }
+
+    public function sokudan() {
+        $client = new Client();
         $crawler = $client->request('GET', 'https://sokudan.work/login');
         $form = $crawler->selectButton('ログイン')->form();
         $crawler = $client->submit($form, array('user[email]' => 'danghuuhai1@gmail.com', 'user[password]' => 'Dai21234'));
