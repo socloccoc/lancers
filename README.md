@@ -27,6 +27,10 @@
 - cd app/crawl
 - php artisan sokudan:crawl
 
+### Crawl data from sokudan page
+- cd app/crawl
+- php artisan crowdworks:crawl
+
 ### Adminer
 
 - http://crawl.local:8081
