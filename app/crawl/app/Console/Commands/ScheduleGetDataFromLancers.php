@@ -61,7 +61,7 @@ class ScheduleGetDataFromLancers extends Command
                     $client = new Client();
                     $crawler = $client->request('GET', 'https://www.lancers.jp/user/login');
                     $form = $crawler->selectButton('ログイン')->form();
-                    $client->submit($form, array('data[User][email]' =>  config('constants.accounts.lancers.email'), 'data[User][password]' =>  config('constants.accounts.lancers.email')));
+                    $client->submit($form, array('data[User][email]' =>  config('constants.accounts.lancers.email'), 'data[User][password]' =>  config('constants.accounts.lancers.pass')));
                     $client = $client->request('GET', $clientDetailUrl);
                 }
                 $clientName = $client->filter('h1.p-profile__media-heading.c-heading.c-heading--lv2')->text();

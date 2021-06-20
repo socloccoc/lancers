@@ -10,6 +10,21 @@ class HomeController extends Controller
     }
 
     public function index() {
+        $workDetailUrl = 'https://www.lancers.jp/work/detail/'.'3642710';
+        echo $workDetailUrl."\n";
+        $client = new Client();
+        $crawler = $client->request('GET', 'https://www.lancers.jp/user/login');
+        $form = $crawler->selectButton('ログイン')->form();
+        $client->submit($form, array('data[User][email]' =>  config('constants.accounts.lancers.email'), 'data[User][password]' =>  config('constants.accounts.lancers.pass')));
+        $client = $client->request('GET', $workDetailUrl);
+        $client->filter('ul.logoNuanceRange__list')->each(function ($node, $index){
+            if($index == 1){
+                dd($node->html());
+            }
+        });
+    }
+
+    public function crowdworks() {
         $client = new Client();
         $crawler = $client->request('GET', 'https://crowdworks.jp/login');
         $form = $crawler->selectButton('ログインする')->form();
