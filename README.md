@@ -23,11 +23,16 @@
 - cd app/crawl
 - php artisan lancers:crawl
 
+### Crawl works detail from lancers page
+- cd app/crawl
+- php artisan lancers_work_detail:crawl
+- php artisan google:sheet_api
+
 ### Crawl data from sokudan page
 - cd app/crawl
 - php artisan sokudan:crawl
 
-### Crawl data from sokudan page
+### Crawl data from crowdworks page
 - cd app/crawl
 - php artisan crowdworks:crawl
 
