@@ -25,5 +25,6 @@ return [
                 'https://crowdworks.jp/public/jobs/group/ec',
             ]
         ]
-    ]
+    ],
+    'spreadsheetId' => env('SHEET_ID')
 ];

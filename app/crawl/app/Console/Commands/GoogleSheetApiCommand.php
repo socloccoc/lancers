@@ -85,10 +85,12 @@ class GoogleSheetApiCommand extends Command
      */
     public function handle()
     {
+
         Log::debug('start update sheet 1 data');
-        $client = $this->getGoogleClient();
-        $service = new Google_Service_Sheets($client);
-        $spreadsheetId = '1ec8iH2oz25GhGpnn6svaY0A0_J4P62jOe_eN4VrBqxg';
+//        $client = $this->getGoogleClient();
+//        $service = new Google_Service_Sheets($client);
+        $spreadsheetId = config('constants.spreadsheetId');
+        dd($spreadsheetId);
         $range = 'works!C2:Y';
 
         // get values
